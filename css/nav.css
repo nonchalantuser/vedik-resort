@@ -1,0 +1,331 @@
+/* ============================================================
+   VEDIK RESORT — NAVIGATION STYLES
+   ============================================================ */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 88px;
+  background: transparent;
+  transition: height 300ms ease, background 300ms ease, box-shadow 300ms ease;
+}
+
+.site-nav.scrolled {
+  height: 64px;
+  background: var(--burgundy-deep);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+
+.nav-inner {
+  max-width: var(--max-container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* --- Logo --- */
+.nav-logo {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-tree {
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.logo-link:hover .logo-tree {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.logo-name sup {
+  font-size: 9px;
+  vertical-align: super;
+  letter-spacing: 0;
+}
+
+.logo-tagline {
+  font-family: 'Great Vibes', cursive;
+  font-size: 16px;
+  color: var(--gold-primary);
+  line-height: 1.3;
+}
+
+/* --- Center Nav Links --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--white);
+  white-space: nowrap;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 16px;
+  right: 16px;
+  height: 1.5px;
+  background: var(--gold-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover {
+  color: var(--gold-light);
+}
+
+/* Dropdown chevron */
+.nav-chevron {
+  font-size: 8px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-item:hover .nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* --- Dropdown --- */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: var(--ivory);
+  border-top: 3px solid var(--gold-primary);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms ease, visibility 250ms ease, transform 250ms ease;
+  transform: translateX(-50%) translateY(-8px);
+  z-index: 100;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 12px 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--charcoal);
+  border-bottom: 1px solid rgba(200, 146, 42, 0.1);
+  transition: color var(--transition-fast), background var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.nav-dropdown a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown a:hover {
+  color: var(--gold-primary);
+  background: rgba(200, 146, 42, 0.05);
+  padding-left: 28px;
+}
+
+/* --- Right Zone --- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold-primary);
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.nav-phone:hover {
+  color: var(--gold-light);
+}
+
+.nav-phone svg {
+  flex-shrink: 0;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.2);
+}
+
+.site-nav.scrolled .nav-right .btn-primary {
+  height: 44px;
+}
+
+/* --- Mobile Hamburger --- */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--gold-primary);
+  border-radius: 2px;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- Mobile Overlay --- */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--burgundy-deep);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px 100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.mobile-nav.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 24px;
+}
+
+.mobile-nav-links a {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-style: italic;
+  color: var(--white);
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-links a:hover {
+  color: var(--gold-light);
+}
+
+.mobile-nav-book {
+  width: 100%;
+  max-width: 320px;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mobile-nav-book .btn {
+  width: 100%;
+  height: 56px;
+  font-size: 13px;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 8px;
+}

@@ -1,0 +1,221 @@
+/* ============================================================
+   VEDIK RESORT — HERO STYLES
+   ============================================================ */
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Hero Background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(30,10,5,0.3) 50%,
+    rgba(30,10,5,0.65) 100%
+  );
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--gutter);
+  padding-top: 88px;
+  max-width: var(--max-container);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 680px;
+}
+
+.hero-text .eyebrow {
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-text h1 {
+  color: var(--white);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+  line-height: 1.08;
+}
+
+.hero-text .hero-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+/* Scroll Nudge */
+.scroll-nudge {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  animation: bounce 2s ease infinite 1.5s;
+}
+
+.scroll-nudge svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Inline Booking Widget --- */
+.booking-widget {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgba(92, 26, 34, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 2px solid var(--gold-primary);
+  height: 80px;
+}
+
+.booking-widget-inner {
+  max-width: var(--max-container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.booking-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  border-right: 1px solid rgba(200, 146, 42, 0.25);
+  height: 100%;
+  cursor: pointer;
+}
+
+.booking-field:first-child {
+  padding-left: 0;
+}
+
+.booking-field label {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px;
+}
+
+.booking-field input,
+.booking-field select {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.booking-field input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.booking-field select {
+  color: rgba(255,255,255,0.85);
+  -webkit-appearance: none;
+}
+
+.booking-field select option {
+  background: var(--burgundy-deep);
+  color: var(--white);
+}
+
+.booking-field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.6);
+  cursor: pointer;
+}
+
+.booking-widget-btn {
+  padding: 0 24px;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.booking-widget-btn .btn {
+  height: 48px;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+/* --- Keyframes --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}

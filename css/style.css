@@ -1,0 +1,396 @@
+/* ============================================================
+   VEDIK RESORT — CORE DESIGN SYSTEM
+   ============================================================ */
+
+/* --- Google Fonts are loaded in HTML head --- */
+
+/* --- CSS Custom Properties --- */
+:root {
+  --gold-primary:    #C8922A;
+  --gold-light:      #E8C264;
+  --gold-muted:      #D4A853;
+  --ivory:           #FDF8F2;
+  --burgundy-deep:   #5C1A22;
+  --burgundy-mid:    #7B2733;
+  --warm-stone:      #EDE4D8;
+  --charcoal:        #1C1C1C;
+  --text-muted:      rgba(28,28,28,0.55);
+  --white:           #FFFFFF;
+  --footer-bg:       #1A0A0E;
+
+  --max-container:   1400px;
+  --gutter:          80px;
+  --section-pad:     120px;
+
+  --transition-fast: 200ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--charcoal);
+  background-color: var(--ivory);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: 'Jost', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --- Container --- */
+.container {
+  max-width: var(--max-container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* --- Typography Base --- */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(42px, 6.5vw, 88px);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  font-size: clamp(32px, 3.8vw, 52px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+h3 {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--charcoal);
+}
+
+/* --- Eyebrow Labels --- */
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold-primary);
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* --- Gold Rule --- */
+.gold-rule {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--gold-primary);
+  margin-bottom: 24px;
+}
+
+.gold-rule--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Section Heading Block --- */
+.section-heading {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 16px;
+}
+
+.section-heading .gold-rule {
+  margin: 0 auto 24px;
+}
+
+.section-heading h2 {
+  margin-bottom: 16px;
+}
+
+.section-heading .subtext {
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  height: 52px;
+  padding: 0 32px;
+  border-radius: 2px;
+  transition: background var(--transition-base), 
+              color var(--transition-base), 
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              transform var(--transition-base);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--gold-primary);
+  color: var(--white);
+  border: 1.5px solid var(--gold-primary);
+}
+
+.btn-primary:hover {
+  background: #A5741F;
+  border-color: #A5741F;
+  box-shadow: 0 8px 24px rgba(200, 146, 42, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gold-primary);
+  border: 1.5px solid var(--gold-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--gold-primary);
+  color: var(--white);
+  box-shadow: 0 8px 24px rgba(200, 146, 42, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid var(--white);
+}
+
+.btn-ghost:hover {
+  background: var(--white);
+  color: var(--burgundy-deep);
+  transform: translateY(-1px);
+}
+
+.btn-burgundy {
+  background: var(--burgundy-deep);
+  color: var(--ivory);
+  border: 1.5px solid var(--burgundy-deep);
+}
+
+.btn-burgundy:hover {
+  background: var(--burgundy-mid);
+  box-shadow: 0 8px 24px rgba(92,26,34,0.35);
+  transform: translateY(-1px);
+}
+
+/* --- Script Accent --- */
+.script-accent {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold-primary);
+}
+
+/* --- Gold Corner Bracket Ornament --- */
+.corner-bracket {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.corner-bracket--tl {
+  top: 12px;
+  left: 12px;
+  border-top: 2px solid var(--gold-primary);
+  border-left: 2px solid var(--gold-primary);
+}
+
+.corner-bracket--br {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 2px solid var(--gold-primary);
+  border-right: 2px solid var(--gold-primary);
+}
+
+/* --- Mandala SVG Watermark --- */
+.mandala-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Scroll Animation --- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* --- Placeholder Image Utility --- */
+.img-placeholder {
+  background: linear-gradient(135deg, var(--warm-stone) 0%, #d4c4b0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,146,42,0.08) 0%, rgba(92,26,34,0.06) 100%);
+}
+
+/* Image object-fit wrapper */
+.img-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* --- Dotted Gold Divider --- */
+.dot-divider {
+  border: none;
+  border-top: 1px dashed rgba(200, 146, 42, 0.4);
+  margin: 24px 0;
+}
+
+/* --- Pill Badge --- */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(200, 146, 42, 0.1);
+  color: var(--gold-primary);
+  border: 1px solid rgba(200, 146, 42, 0.3);
+}
+
+/* --- Utility --- */
+.text-center { text-align: center; }
+.text-white  { color: var(--white) !important; }
+.text-gold   { color: var(--gold-primary) !important; }
+.text-burgundy { color: var(--burgundy-deep) !important; }
+.mt-8  { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mt-40 { margin-top: 40px; }
+.mt-48 { margin-top: 48px; }
+.mb-8  { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.gap-16 { gap: 16px; }
+
+/* --- Section vertical spacing --- */
+.section {
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section--ivory { background: var(--ivory); }
+.section--stone { background: var(--warm-stone); }
+.section--burgundy { background: var(--burgundy-deep); }
+.section--dark { background: var(--footer-bg); }
+
+/* ============================================================
+   MANDALA SVG (inline background)
+   ============================================================ */
+.mandala-watermark {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

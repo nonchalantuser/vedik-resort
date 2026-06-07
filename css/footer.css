@@ -1,0 +1,308 @@
+/* ============================================================
+   VEDIK RESORT — FOOTER STYLES
+   ============================================================ */
+
+.site-footer {
+  background: var(--footer-bg);
+  padding: 80px var(--gutter) 0;
+}
+
+.footer-grid {
+  max-width: var(--max-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 30fr 23fr 23fr 24fr;
+  gap: 48px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Column 1 — Brand */
+.footer-brand .logo-link {
+  margin-bottom: 16px;
+  display: inline-flex;
+}
+
+.footer-brand .logo-name {
+  color: var(--white);
+}
+
+.footer-brand .logo-tagline {
+  color: var(--gold-primary);
+}
+
+.footer-unit-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.footer-brand-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--gold-primary);
+  margin: 16px 0;
+}
+
+.footer-brand-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  max-width: 260px;
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,146,42,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-primary);
+  font-size: 14px;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-icon:hover {
+  background: var(--gold-primary);
+  border-color: var(--gold-primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Footer Columns 2-4 */
+.footer-col-heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-primary);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-links a {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1;
+  padding: 7px 0;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.footer-links a:hover {
+  color: var(--gold-primary);
+  padding-left: 6px;
+}
+
+/* Column 4 — Reservations */
+.footer-address {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 10px;
+  transition: color var(--transition-fast);
+}
+
+.footer-contact-item:hover {
+  color: var(--gold-primary);
+}
+
+.footer-contact-item .icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.footer-rule {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 20px 0;
+}
+
+.footer-col .btn {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-col .btn-newsletter {
+  height: 44px;
+  font-size: 11px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-col .btn-newsletter:hover {
+  border-color: var(--white);
+  color: var(--white);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  max-width: var(--max-container);
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-left span,
+.footer-bottom-left a {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  transition: color var(--transition-fast);
+}
+
+.footer-bottom-left a:hover {
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-bottom-sep {
+  margin: 0 12px;
+  color: rgba(255,255,255,0.2);
+}
+
+.footer-bottom-right {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ============================================================
+   FLOATING ELEMENTS
+   ============================================================ */
+
+/* Mobile Sticky Booking Bar */
+.mobile-booking-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--burgundy-deep);
+  height: 64px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+.mobile-booking-bar span {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.mobile-booking-bar .btn {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* Scroll To Top */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 112px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: var(--gold-primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  border: none;
+  box-shadow: 0 4px 20px rgba(200,146,42,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 300ms ease, visibility 300ms ease, transform 300ms ease, background 200ms ease;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: #A5741F;
+}
+
+/* WhatsApp Bubble */
+.whatsapp-bubble {
+  position: fixed;
+  bottom: 176px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  text-decoration: none;
+}
+
+.whatsapp-bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.5);
+}
+
+.whatsapp-bubble svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--white);
+}
