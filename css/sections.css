@@ -1265,3 +1265,548 @@
 .room-detail-gallery .gallery-thumb:hover img {
   transform: scale(1.06);
 }
+
+/* ============================================================
+   ABOUT SECTION — Dark green placeholder background
+   ============================================================ */
+.about-image-bg {
+  background-color: #2C4A3E !important;
+}
+
+/* ============================================================
+   TESTIMONIALS — Styled Cards (Fix 7 & 10)
+   ============================================================ */
+.testimonials-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: var(--max-container, 1280px);
+  margin: 48px auto 0;
+  padding: 0 var(--gutter, 40px);
+}
+
+.testimonial-card-styled {
+  background: #fff;
+  border-radius: 4px;
+  border-top: 3px solid #C8922A;
+  box-shadow: 0 8px 40px rgba(92,26,34,0.10);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.testimonial-card-styled .testimonial-stars {
+  display: flex;
+  gap: 4px;
+  color: #C8922A;
+  font-size: 18px;
+}
+
+.testimonial-card-styled .testimonial-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #3a2010;
+  font-size: 15px;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.testimonial-divider-dot {
+  color: #C8922A;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.testimonial-card-styled .testimonial-name {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5C1A22;
+}
+
+.testimonial-card-styled .testimonial-origin {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  color: #C8922A;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   GALLERY — Placeholder Boxes (Fix 8)
+   ============================================================ */
+.gallery-placeholder-box {
+  position: absolute;
+  inset: 0;
+  background: #EDE4D8;
+  border: 1.5px solid rgba(200,146,42,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-placeholder-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(200,146,42,0.7);
+}
+
+/* gallery overlay label instead of "+" */
+.gallery-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   MOST POPULAR BADGE (New Feature 2)
+   ============================================================ */
+.most-popular-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #C8922A;
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0;
+  pointer-events: none;
+}
+
+/* ============================================================
+   QUICK ENQUIRY PANEL (New Feature 1)
+   ============================================================ */
+.enquiry-float-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 160px;
+  z-index: 9990;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #5C1A22;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(92,26,34,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: visible;
+}
+
+.enquiry-float-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(92,26,34,0.45);
+}
+
+.enquiry-float-label {
+  position: absolute;
+  right: calc(100% + 10px);
+  white-space: nowrap;
+  background: #5C1A22;
+  color: #C8922A;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.enquiry-float-btn:hover .enquiry-float-label {
+  opacity: 1;
+}
+
+.enquiry-panel {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 380px;
+  height: 100%;
+  background: #FDF8F2;
+  border-left: 3px solid #C8922A;
+  z-index: 10000;
+  transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+  overflow-y: auto;
+  box-shadow: -8px 0 40px rgba(92,26,34,0.15);
+}
+
+.enquiry-panel.open {
+  right: 0;
+}
+
+.enquiry-panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,10,14,0.5);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.enquiry-panel-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.enquiry-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 28px 0;
+  border-bottom: 1px solid rgba(200,146,42,0.15);
+  padding-bottom: 20px;
+}
+
+.enquiry-panel-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #5C1A22;
+  font-weight: 700;
+  margin: 0;
+}
+
+.enquiry-panel-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: rgba(92,26,34,0.5);
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+  padding: 4px;
+}
+
+.enquiry-panel-close:hover { color: #5C1A22; }
+
+.enquiry-panel-form {
+  padding: 24px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ep-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ep-group label {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5C1A22;
+}
+
+.ep-group input,
+.ep-group select,
+.ep-group textarea {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #3a2010;
+  background: #fff;
+  border: 1.5px solid rgba(200,146,42,0.3);
+  border-radius: 3px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ep-group input:focus,
+.ep-group select:focus,
+.ep-group textarea:focus {
+  border-color: #C8922A;
+}
+
+.ep-phone-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid rgba(200,146,42,0.3);
+  border-radius: 3px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.ep-phone-wrap:focus-within { border-color: #C8922A; }
+
+.ep-prefix {
+  padding: 10px 10px 10px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: rgba(92,26,34,0.5);
+  background: transparent;
+  white-space: nowrap;
+}
+
+.ep-phone-wrap input {
+  border: none;
+  padding: 10px 14px 10px 0;
+  flex: 1;
+}
+
+.ep-phone-wrap input:focus { border: none; box-shadow: none; }
+
+.ep-submit-btn {
+  background: #C8922A;
+  color: #fff;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.ep-submit-btn:hover { background: #b07d22; }
+.ep-submit-btn:active { transform: scale(0.98); }
+
+.ep-direct-call {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  color: rgba(92,26,34,0.55);
+  text-align: center;
+  margin: 0;
+}
+
+.ep-direct-call a {
+  color: #C8922A;
+  text-decoration: none;
+}
+
+/* Mobile panel full-width */
+@media (max-width: 480px) {
+  .enquiry-panel {
+    width: 100%;
+    right: -100%;
+  }
+}
+
+/* ============================================================
+   OFFER NOTIFICATION POPUP (New Feature 3)
+   ============================================================ */
+.offer-popup {
+  position: fixed;
+  bottom: 24px;
+  right: 90px;
+  z-index: 9980;
+  width: 300px;
+  background: #5C1A22;
+  border-left: 4px solid #C8922A;
+  border-radius: 4px;
+  padding: 20px 20px 18px;
+  box-shadow: 0 8px 40px rgba(26,10,14,0.35);
+  display: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.offer-popup--visible {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.offer-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.offer-popup-close:hover { color: #fff; }
+
+.offer-popup-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.offer-popup-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C8922A;
+}
+
+.offer-popup-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.offer-popup-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  color: #C8922A;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.offer-popup-link:hover { color: #e8c264; }
+
+/* ============================================================
+   CALLBACK SECTION on Contact Page (New Feature 4)
+   ============================================================ */
+.callback-section {
+  margin-top: 40px;
+  padding: 36px 40px;
+  background: #FDF8F2;
+  border: 1px solid rgba(200,146,42,0.2);
+  border-radius: 4px;
+}
+
+.callback-heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C8922A;
+  margin-bottom: 20px;
+}
+
+.callback-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.callback-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.callback-field label {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5C1A22;
+}
+
+.callback-field input {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  padding: 10px 14px;
+  border: 1.5px solid rgba(200,146,42,0.3);
+  border-radius: 3px;
+  background: #fff;
+  color: #3a2010;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.callback-field input:focus { border-color: #C8922A; }
+
+.callback-phone-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid rgba(200,146,42,0.3);
+  border-radius: 3px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.callback-phone-wrap:focus-within { border-color: #C8922A; }
+
+.callback-prefix {
+  padding: 10px 8px 10px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: rgba(92,26,34,0.5);
+}
+
+.callback-phone-wrap input {
+  border: none;
+  flex: 1;
+}
+
+.callback-btn {
+  width: 100%;
+  height: 50px;
+  background: #C8922A;
+  color: #fff;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 12px;
+}
+
+.callback-btn:hover { background: #b07d22; }
+
+.callback-note {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  color: rgba(92,26,34,0.5);
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .testimonials-cards-row {
+    grid-template-columns: 1fr;
+  }
+  .callback-fields {
+    grid-template-columns: 1fr;
+  }
+  .callback-section {
+    padding: 24px 20px;
+  }
+}
