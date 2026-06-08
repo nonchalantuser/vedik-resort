@@ -23,13 +23,13 @@
   display: inline-flex;
 }
 
-.footer-brand .logo-name {
-  color: var(--white);
+.footer-brand .logo-img {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
-.footer-brand .logo-tagline {
-  color: var(--gold-primary);
-}
+
 
 .footer-unit-text {
   font-family: 'Jost', sans-serif;
@@ -244,65 +244,4 @@
   flex-shrink: 0;
 }
 
-/* Scroll To Top */
-.scroll-top-btn {
-  position: fixed;
-  bottom: 112px;
-  right: 32px;
-  width: 48px;
-  height: 48px;
-  background: var(--gold-primary);
-  color: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  border: none;
-  box-shadow: 0 4px 20px rgba(200,146,42,0.4);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 300ms ease, visibility 300ms ease, transform 300ms ease, background 200ms ease;
-}
 
-.scroll-top-btn.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.scroll-top-btn:hover {
-  background: #A5741F;
-}
-
-/* WhatsApp Bubble */
-.whatsapp-bubble {
-  position: fixed;
-  bottom: 176px;
-  right: 32px;
-  width: 56px;
-  height: 56px;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: transform 200ms ease, box-shadow 200ms ease;
-  text-decoration: none;
-}
-
-.whatsapp-bubble:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 28px rgba(37,211,102,0.5);
-}
-
-.whatsapp-bubble svg {
-  width: 28px;
-  height: 28px;
-  fill: var(--white);
-}

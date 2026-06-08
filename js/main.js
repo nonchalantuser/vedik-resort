@@ -110,25 +110,7 @@
     checkOut.value = tomorrow.toISOString().split('T')[0];
   }
 
-  /* ----------------------------------------------------------------
-     SCROLL-TO-TOP BUTTON
-  ---------------------------------------------------------------- */
-  var scrollTopBtn = document.getElementById('scrollTopBtn');
 
-  function handleScrollTopVisibility() {
-    if (!scrollTopBtn) return;
-    if (window.scrollY > 600) {
-      scrollTopBtn.classList.add('visible');
-    } else {
-      scrollTopBtn.classList.remove('visible');
-    }
-  }
-
-  window.addEventListener('scroll', handleScrollTopVisibility, { passive: true });
-
-  scrollTopBtn && scrollTopBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 
   /* ----------------------------------------------------------------
      SCROLL ANIMATIONS — Intersection Observer

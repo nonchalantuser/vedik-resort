@@ -598,54 +598,7 @@
   flex-wrap: wrap;
 }
 
-/* ============================================================
-   SECTION 10: SPECIAL OFFERS RIBBON
-   ============================================================ */
-.offers-ribbon {
-  background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-  min-height: 120px;
-  padding: 20px var(--gutter);
-  display: flex;
-  align-items: center;
-}
 
-.offers-ribbon-inner {
-  max-width: var(--max-container);
-  margin-inline: auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.offers-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.offers-tag-icon {
-  font-size: 32px;
-  flex-shrink: 0;
-}
-
-.offers-title {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: clamp(28px, 3vw, 36px);
-  color: var(--burgundy-deep);
-  line-height: 1.1;
-}
-
-.offers-center {
-  font-family: 'Jost', sans-serif;
-  font-size: 15px;
-  color: var(--burgundy-deep);
-  text-align: center;
-  flex: 1;
-  opacity: 0.9;
-}
 
 /* ============================================================
    SECTION 11: GALLERY MOSAIC
@@ -667,7 +620,7 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 16px;
   max-width: var(--max-container);
@@ -680,16 +633,10 @@
   overflow: hidden;
   border-radius: 2px;
   cursor: pointer;
+  aspect-ratio: 4 / 5;
 }
 
-.gallery-item--large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
 
-.gallery-item--wide {
-  grid-column: span 2;
-}
 
 .gallery-item-img {
   width: 100%;
@@ -808,11 +755,6 @@
   color: var(--burgundy-deep);
   line-height: 1.7;
   margin-bottom: 24px;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .testimonial-divider {
@@ -1394,8 +1336,8 @@
    ============================================================ */
 .enquiry-float-btn {
   position: fixed;
-  right: 24px;
-  bottom: 160px;
+  right: 32px;
+  bottom: 32px;
   z-index: 9990;
   width: 52px;
   height: 52px;
