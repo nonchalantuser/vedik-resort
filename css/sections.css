@@ -17,7 +17,7 @@
 
 .trust-bar-inner {
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -75,6 +75,7 @@
   display: grid;
   grid-template-columns: 55fr 45fr;
   min-height: 700px;
+  max-width: 100%;
 }
 
 /* Left Image Column */
@@ -197,15 +198,26 @@
    ============================================================ */
 .accommodation-section {
   background: var(--warm-stone);
-  padding: var(--section-pad) var(--gutter);
+  padding: var(--section-pad) 0;
   position: relative;
 }
 
-.accommodation-section .container {
+.accommodation-section > div[style],
+.accommodation-section > .container {
   max-width: var(--max-container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  position: relative;
+  z-index: 1;
+}
+/* Room Cards Grid */
+/* Accommodation page: alternating image-text room panels */
+.room-detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
 }
 
-/* Room Cards Grid */
 .rooms-grid-row1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -217,7 +229,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto 48px;
 }
 
@@ -310,9 +322,16 @@
    ============================================================ */
 .facilities-section {
   background: var(--burgundy-deep);
-  padding: var(--section-pad) var(--gutter);
+  padding: var(--section-pad) 0;
   position: relative;
   overflow: hidden;
+}
+
+.facilities-section .section-heading {
+  padding-inline: var(--gutter);
+  max-width: var(--max-container);
+  margin-inline: auto;
+  margin-bottom: 64px;
 }
 
 .facilities-section .section-heading h2 {
@@ -328,7 +347,12 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
+}
+
+/* Direct child of facilities-section: needs own padding */
+.facilities-section > .facilities-grid {
+  padding-inline: var(--gutter);
 }
 
 .facility-tile {
@@ -379,6 +403,16 @@
   grid-template-columns: 45fr 55fr;
   min-height: 600px;
   overflow: hidden;
+  max-width: 100%;
+}
+
+/* Inner centering wrapper for dining — prevents
+   content from stretching beyond readable width */
+.dining-left-inner,
+.dining-right-inner {
+  max-width: 720px;
+  margin-inline: auto;
+  width: 100%;
 }
 
 .dining-left {
@@ -527,7 +561,7 @@
   text-align: center;
   padding: 80px var(--gutter);
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
   width: 100%;
 }
 
@@ -577,7 +611,7 @@
 
 .offers-ribbon-inner {
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -618,7 +652,17 @@
    ============================================================ */
 .gallery-section {
   background: var(--ivory);
-  padding: var(--section-pad) var(--gutter);
+  padding: var(--section-pad) 0;
+}
+
+.gallery-section .section-heading,
+.gallery-section .text-center {
+  padding-inline: var(--gutter);
+}
+
+/* When gallery-grid is a direct child of gallery-section (not in .container), add padding */
+.gallery-section > .gallery-grid {
+  padding-inline: var(--gutter);
 }
 
 .gallery-grid {
@@ -627,7 +671,8 @@
   grid-template-rows: auto;
   gap: 16px;
   max-width: var(--max-container);
-  margin: 0 auto 48px;
+  margin-inline: auto;
+  margin-bottom: 48px;
 }
 
 .gallery-item {
@@ -713,8 +758,13 @@
    ============================================================ */
 .testimonials-section {
   background: var(--warm-stone);
-  padding: var(--section-pad) var(--gutter);
+  padding: var(--section-pad) 0;
   overflow: hidden;
+}
+
+.testimonials-section .section-heading,
+.testimonials-section .testimonials-nav {
+  padding-inline: var(--gutter);
 }
 
 .testimonials-track {
@@ -794,7 +844,8 @@
   position: relative;
   overflow: hidden;
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .testimonials-nav {
@@ -857,8 +908,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 0;
   max-width: var(--max-container);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .location-map {
@@ -977,8 +1028,9 @@
   position: relative;
   z-index: 2;
   padding: 60px var(--gutter);
+  padding-bottom: clamp(40px, 5vw, 60px);
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
   width: 100%;
 }
 

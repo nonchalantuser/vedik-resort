@@ -7,6 +7,7 @@
   position: relative;
   height: 100vh;
   min-height: 640px;
+  max-height: 1000px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -45,10 +46,10 @@
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 0 var(--gutter);
+  padding-inline: var(--gutter);
   padding-top: 88px;
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
   width: 100%;
 }
 
@@ -123,8 +124,8 @@
 
 .booking-widget-inner {
   max-width: var(--max-container);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
   height: 100%;
   display: flex;
   align-items: center;

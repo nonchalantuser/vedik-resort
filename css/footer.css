@@ -9,7 +9,7 @@
 
 .footer-grid {
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: 30fr 23fr 23fr 24fr;
   gap: 48px;
@@ -170,7 +170,7 @@
 /* Footer Bottom Bar */
 .footer-bottom {
   max-width: var(--max-container);
-  margin: 0 auto;
+  margin-inline: auto;
   padding: 24px 0;
   display: flex;
   align-items: center;

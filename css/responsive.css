@@ -1,13 +1,84 @@
 /* ============================================================
    VEDIK RESORT — RESPONSIVE STYLES
+   Mobile-first cascade: base → tablet → desktop → xl
    ============================================================ */
 
-/* --- Large Tablets & Small Desktops (≤ 1200px) --- */
-@media (max-width: 1200px) {
+/* ============================================================
+   XL DESKTOPS (≥ 1600px) — Content capping + anti-stretch
+   ============================================================ */
+@media (min-width: 1600px) {
   :root {
-    --gutter: 48px;
-    --section-pad: 96px;
+    --gutter: 80px;
+    --section-pad: 120px;
   }
+
+  /* Prevent hero text from getting too wide */
+  .hero-text {
+    max-width: 740px;
+  }
+
+  /* Ensure full-bleed sections still constrain inner content */
+  .trust-bar {
+    padding-inline: 0;
+  }
+
+  .trust-bar-inner {
+    padding-inline: var(--gutter);
+  }
+
+  .facilities-section,
+  .gallery-section,
+  .testimonials-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* About: constrain text column on very wide screens */
+  .about-text-col {
+    padding: var(--section-pad) 100px;
+  }
+
+  /* Dining: limit left panel text width */
+  .dining-left p {
+    max-width: 440px;
+  }
+
+  /* Room cards: prevent excessive card widths */
+  .rooms-grid-row2 {
+    max-width: 70%;
+  }
+
+  /* Footer: slight cap on wide screens */
+  .footer-grid {
+    gap: 64px;
+  }
+}
+
+/* ============================================================
+   LARGE DESKTOPS (≥ 1280px and < 1600px) — Fine tuning
+   ============================================================ */
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .about-text-col {
+    padding: var(--section-pad) 72px;
+  }
+
+  /* Gallery section heading alignment */
+  .gallery-section .section-heading,
+  .testimonials-section .section-heading {
+    padding-inline: var(--gutter);
+  }
+
+  .gallery-section .text-center,
+  .testimonials-section .testimonials-nav {
+    padding-inline: var(--gutter);
+  }
+}
+
+/* ============================================================
+   LARGE TABLETS & SMALL DESKTOPS (≤ 1200px)
+   ============================================================ */
+@media (max-width: 1200px) {
+  /* gutter and section-pad auto-scale via clamp() in :root */
 
   .about-grid {
     grid-template-columns: 1fr 1fr;
@@ -25,16 +96,20 @@
   .facilities-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  /* Dining: tighten padding */
+  .dining-left {
+    padding: 64px 48px;
+  }
 }
 
-/* --- Tablet (≤ 992px) --- */
+/* ============================================================
+   TABLET (≤ 992px)
+   ============================================================ */
 @media (max-width: 992px) {
-  :root {
-    --gutter: 36px;
-    --section-pad: 80px;
-  }
+  /* gutter/section-pad auto-scale; structural overrides below */
 
-  /* Nav */
+  /* ---- Nav ---- */
   .nav-links,
   .nav-phone,
   .nav-divider,
@@ -54,7 +129,7 @@
     height: 64px;
   }
 
-  /* Hero */
+  /* ---- Hero ---- */
   .booking-widget {
     height: auto;
     padding: 20px;
@@ -69,7 +144,7 @@
   .booking-field {
     flex: 1 1 calc(50% - 8px);
     border-right: none;
-    border-bottom: 1px solid rgba(200,146,42,0.2);
+    border-bottom: 1px solid rgba(200, 146, 42, 0.2);
     padding: 12px 0;
     height: auto;
   }
@@ -89,7 +164,7 @@
     bottom: 180px;
   }
 
-  /* About */
+  /* ---- About ---- */
   .about-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 500px auto;
@@ -108,7 +183,7 @@
     padding: var(--section-pad) var(--gutter);
   }
 
-  /* Rooms */
+  /* ---- Rooms ---- */
   .rooms-grid-row1 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -118,12 +193,12 @@
     max-width: 480px;
   }
 
-  /* Facilities */
+  /* ---- Facilities ---- */
   .facilities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Dining */
+  /* ---- Dining ---- */
   .dining-section {
     grid-template-columns: 1fr;
     grid-template-rows: auto 400px;
@@ -137,7 +212,7 @@
     min-height: 400px;
   }
 
-  /* Trust bar */
+  /* ---- Trust bar ---- */
   .trust-bar-inner {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -147,10 +222,10 @@
   }
 
   .trust-item:nth-child(4) {
-    border-right: 1px solid rgba(200,146,42,0.3);
+    border-right: 1px solid rgba(200, 146, 42, 0.3);
   }
 
-  /* Gallery */
+  /* ---- Gallery ---- */
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -160,12 +235,12 @@
     grid-row: span 1;
   }
 
-  /* Testimonials */
+  /* ---- Testimonials ---- */
   .testimonial-card {
     min-width: calc(50% - 14px);
   }
 
-  /* Location */
+  /* ---- Location ---- */
   .location-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -179,12 +254,12 @@
     height: 400px;
   }
 
-  /* Footer */
+  /* ---- Footer ---- */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Contact */
+  /* ---- Contact ---- */
   .contact-form-grid {
     grid-template-columns: 1fr;
   }
@@ -199,31 +274,40 @@
     padding: 64px 48px;
   }
 
-  /* Offers Ribbon */
+  /* ---- Offers Ribbon ---- */
   .offers-ribbon-inner {
     flex-direction: column;
     text-align: center;
     padding: 32px 0;
   }
 
-  /* Venue grid */
+  /* ---- Venue grid ---- */
   .venue-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* ---- Accommodation page room detail rows ---- */
+  .room-detail-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---- Rooms grid row2 max-width ---- */
+  .rooms-grid-row2 {
+    max-width: 480px;
+  }
 }
 
-/* --- Mobile (≤ 640px) --- */
+/* ============================================================
+   MOBILE (≤ 640px)
+   ============================================================ */
 @media (max-width: 640px) {
-  :root {
-    --gutter: 24px;
-    --section-pad: 64px;
-  }
+  /* Mobile structural overrides */
 
   /* Typography */
   h2 { font-size: 30px; }
   h3 { font-size: 24px; }
 
-  /* Hero */
+  /* ---- Hero ---- */
   .hero-text h1 { font-size: 38px; }
   .hero-text .hero-sub { font-size: 15px; }
   .hero-cta-row { flex-direction: column; align-items: flex-start; }
@@ -236,7 +320,7 @@
     flex: 1 1 100%;
   }
 
-  /* Trust bar */
+  /* ---- Trust bar ---- */
   .trust-bar-inner {
     grid-template-columns: repeat(2, 1fr);
     padding: 24px 0;
@@ -244,7 +328,7 @@
 
   .trust-item {
     border-right: none;
-    border-bottom: 1px solid rgba(200,146,42,0.2);
+    border-bottom: 1px solid rgba(200, 146, 42, 0.2);
     padding: 20px 16px;
   }
 
@@ -253,7 +337,7 @@
     border-bottom: none;
   }
 
-  /* About */
+  /* ---- About ---- */
   .about-float-card {
     right: 16px;
     bottom: 16px;
@@ -264,7 +348,7 @@
   .about-float-card .script-big { font-size: 36px; }
   .about-text-col { padding: var(--section-pad) var(--gutter); }
 
-  /* Rooms */
+  /* ---- Rooms ---- */
   .rooms-grid-row1,
   .rooms-grid-row2 {
     grid-template-columns: 1fr;
@@ -275,7 +359,7 @@
     aspect-ratio: 16/10;
   }
 
-  /* Facilities */
+  /* ---- Facilities ---- */
   .facilities-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -285,20 +369,20 @@
     padding: 24px 16px;
   }
 
-  /* Dining */
+  /* ---- Dining ---- */
   .dining-left {
     padding: var(--section-pad) var(--gutter);
   }
 
   .dining-name { font-size: 52px; }
 
-  /* Events */
+  /* ---- Events ---- */
   .events-content h2 { font-size: 28px; }
   .events-script { font-size: 28px; }
   .events-cta-row { flex-direction: column; }
   .events-cta-row .btn { width: 100%; justify-content: center; }
 
-  /* Gallery */
+  /* ---- Gallery ---- */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
@@ -313,12 +397,12 @@
     grid-column: span 2;
   }
 
-  /* Testimonials */
+  /* ---- Testimonials ---- */
   .testimonial-card {
     min-width: 100%;
   }
 
-  /* Footer */
+  /* ---- Footer ---- */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -330,7 +414,7 @@
     gap: 12px;
   }
 
-  /* Floating */
+  /* ---- Floating ---- */
   .mobile-booking-bar { display: flex; }
 
   .scroll-top-btn {
@@ -343,30 +427,32 @@
     right: 20px;
   }
 
-  /* Forms */
+  /* ---- Forms ---- */
   .form-row {
     grid-template-columns: 1fr;
   }
 
-  /* Venue */
+  /* ---- Venue ---- */
   .venue-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Offers ribbon */
+  /* ---- Offers ribbon ---- */
   .offers-ribbon { height: auto; padding: 28px var(--gutter); }
   .offers-ribbon-inner { gap: 16px; }
 
-  /* Contact form col */
+  /* ---- Contact form col ---- */
   .contact-form-col { padding: var(--section-pad) var(--gutter); }
 
-  /* Room detail gallery */
+  /* ---- Room detail gallery ---- */
   .room-detail-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* --- Very small (≤ 380px) --- */
+/* ============================================================
+   VERY SMALL (≤ 380px)
+   ============================================================ */
 @media (max-width: 380px) {
   .facilities-grid {
     grid-template-columns: 1fr;
@@ -382,7 +468,9 @@
   }
 }
 
-/* --- Print --- */
+/* ============================================================
+   PRINT
+   ============================================================ */
 @media print {
   .site-nav,
   .mobile-booking-bar,
